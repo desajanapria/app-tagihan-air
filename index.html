@@ -444,7 +444,7 @@
         @media print {
             
             /* ATURAN UMUM: Sembunyikan elemen non-konten/navigasi saat CETAK */
-            .header, .sidebar, .login-screen, .customer-login-screen, .modal, .toast, .action-buttons, .stats-grid, .btn, .nav-link, #filter-tagihan-status, #filter-tagihan-bulan, #filter-tagihan-tahun, #search-pelanggan, #btn-tambah-golongan, #btn-tambah-pelanggan, #btn-buat-tagihan, #btn-tambah-kas, #btn-cetak-kas-umum, #btn-tambah-user, #kas-tipe-filter, #kas-bulan-input, #kas-tahun-input, #kas-from-input, #kas-to-input, .chart-container, .dashboard-alert, .app-footer-copyright { /* Tambahkan filter tagihan baru */
+            .header, .sidebar, .login-screen, .customer-login-screen, .modal, .toast, .action-buttons, .stats-grid, .btn, .nav-link, #filter-tagihan-status, #filter-tagihan-bulan, #filter-tagihan-tahun, #search-pelanggan, #btn-tambah-golongan, #btn-tambah-pelanggan, #btn-buat-tagihan, #btn-tambah-kas, #btn-cetak-kas-umum, #btn-tambah-user, #kas-tipe-filter, #kas-bulan-input, #kas-tahun-input, #kas-from-input, #kas-to-input, .chart-container, .dashboard-alert, .app-footer-copyright, #btn-buat-tagihan-massal { /* Ditambahkan: #btn-buat-tagihan-massal */
                 display: none !important;
             }
             
@@ -699,7 +699,7 @@
         </div>
         <!-- HAK CIPTA UNTUK LOGIN SCREEN -->
         <div class="login-card-footer">
-            &copy; 2025 di buat oleh Evhan Syahreza | Aplikasi Tagihan Air
+            &copy; 2024 Evhan Syahreza | Aplikasi Tagihan Air
         </div>
     </div>
 
@@ -712,8 +712,7 @@
                 <input type="text" id="c_id" name="c_id" required placeholder="Cth: 1001">
                 
                 <label for="c_pin">PIN (4 Digit)</label>
-                <!-- PERBAIKAN: Ganti type="password" menjadi type="tel" untuk UX keyboard numerik mobile -->
-                <input type="tel" id="c_pin" name="c_pin" required maxlength="4" placeholder="Cth: 1234" inputmode="numeric">
+                <input type="password" id="c_pin" name="c_pin" required maxlength="4" placeholder="Cth: 1234">
                 
                 <p id="customer-login-error" style="color: var(--danger-color); margin-top: 10px;"></p>
                 
@@ -723,7 +722,7 @@
         </div>
         <!-- HAK CIPTA UNTUK CUSTOMER LOGIN SCREEN -->
         <div class="login-card-footer">
-            &copy; 2025 di buat oleh Evhan Syahreza | Aplikasi Tagihan Air
+            &copy; 2024 Evhan Syahreza | Aplikasi Tagihan Air
         </div>
     </div>
     
@@ -753,7 +752,7 @@
                 </nav>
                 <!-- HAK CIPTA UNTUK MAIN APP SIDEBAR -->
                 <div class="app-footer-copyright">
-                    &copy; 2025 di buat oleh Evhan Syahreza | Aplikasi Tagihan Air
+                    &copy; 2024 Evhan Syahreza | Aplikasi Tagihan Air
                 </div>
             </aside>
             <main class="content-area">
@@ -862,6 +861,8 @@
                         </select>
                         <!-- END NEW FILTER -->
                         <button id="btn-buat-tagihan" class="btn btn-primary"><i class="fa-solid fa-file-circle-plus" style="margin-right: 5px;"></i> Buat Tagihan Baru</button>
+                        <!-- NEW: Tombol Tagihan Massal -->
+                        <button id="btn-buat-tagihan-massal" class="btn btn-primary" style="margin-left: 10px;"><i class="fa-solid fa-layer-group" style="margin-right: 5px;"></i> Tagihan Massal</button>
                     </div>
                     
                     <div class="table-responsive">
@@ -999,23 +1000,6 @@
                         
                         <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk" style="margin-right: 5px;"></i> Simpan Biaya</button>
                     </form>
-                    
-                    <!-- START NEW: Pengaturan Rekening Pembayaran -->
-                    <h3 style="margin-top: 30px;">Pengaturan Rekening Pembayaran</h3>
-                    <form id="form-rekening-bank">
-                        <label for="input-nama-bank">Nama Bank</label>
-                        <input type="text" id="input-nama-bank" required placeholder="Cth: Bank BNI">
-                        
-                        <label for="input-nomor-rekening">Nomor Rekening</label>
-                        <input type="text" id="input-nomor-rekening" required placeholder="Cth: 1234567890">
-
-                        <label for="input-nama-pemilik-rekening">Nama Pemilik Rekening</label>
-                        <input type="text" id="input-nama-pemilik-rekening" required placeholder="Cth: CV. Gusi Sejahtera">
-                        
-                        <button type="submit" class="btn btn-primary" id="btn-simpan-rekening-bank" style="margin-top: 10px;"><i class="fa-solid fa-floppy-disk" style="margin-right: 5px;"></i> Simpan Rekening</button>
-                    </form>
-                    <!-- END NEW: Pengaturan Rekening Pembayaran -->
-
 
                     <h3 style="margin-top: 30px;">Backup & Restore Data</h3>
                     <div style="display: flex; gap: 10px; margin-bottom: 10px;">
@@ -1051,12 +1035,10 @@
                     <!-- ADDED ICONS -->
                     <a href="#" class="nav-link active" data-target="input-meter-mandiri"><i class="fa-solid fa-faucet-drip"></i> Input Meter Mandiri</a>
                     <a href="#" class="nav-link" data-target="riwayat-tagihan-pelanggan"><i class="fa-solid fa-clock-rotate-left"></i> Riwayat Tagihan</a>
-                    <!-- NEW: Menu Rekening Pembayaran -->
-                    <a href="#" class="nav-link" data-target="rekening-pembayaran"><i class="fa-solid fa-money-check-dollar"></i> Rekening Pembayaran</a>
                 </nav>
                 <!-- HAK CIPTA UNTUK CUSTOMER APP SIDEBAR -->
                 <div class="app-footer-copyright">
-                    &copy; 2025 di buat oleh Evhan Syahreza | Aplikasi Tagihan Air
+                    &copy; 2024 Evhan Syahreza | Aplikasi Tagihan Air
                 </div>
             </aside>
             <main class="content-area">
@@ -1104,19 +1086,6 @@
                         </table>
                     </div>
                 </section>
-                
-                <!-- START NEW: REKENING PEMBAYARAN SECTION -->
-                <section id="rekening-pembayaran" class="content-section">
-                    <h2>Rekening Pembayaran Resmi</h2>
-                    <div id="rekening-display" style="padding: 20px; border: 1px solid var(--success-color); border-radius: var(--border-radius); background-color: #e9f7eb;">
-                        <p>Informasi rekening akan ditampilkan di sini setelah dikonfigurasi oleh Admin.</p>
-                    </div>
-                    <div style="margin-top: 20px; padding: 10px; border: 1px dashed #ccc; font-size: 0.9em;">
-                        <p style="font-weight: bold; color: var(--danger-color);">PERHATIAN:</p>
-                        <p>Harap hanya melakukan transfer ke rekening di atas dan pastikan nama pemilik rekening sudah benar. Setelah transfer, Admin akan memproses validasi pembayaran Anda.</p>
-                    </div>
-                </section>
-                <!-- END NEW: REKENING PEMBAYARAN SECTION -->
 
             </main>
         </div>
@@ -1204,6 +1173,25 @@
             </form>
         </div>
     </div>
+    
+    <!-- NEW: MODAL TAGIHAN MASSAL -->
+    <div id="modal-tagihan-massal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Buat Tagihan Massal</h3>
+            <form id="form-tagihan-massal">
+                <label for="periode_massal">Periode Tagihan</label>
+                <input type="month" id="periode_massal" required>
+                <div style="margin-top: 15px; padding: 10px; border: 1px dashed #ddd; border-radius: 4px;">
+                    <p style="margin: 0;">* Tagihan akan dibuat untuk **semua** pelanggan yang belum memiliki tagihan pada periode yang dipilih.</p>
+                    <p style="margin: 5px 0 0 0;">* Meter Akhir akan dihitung berdasarkan **Meter Akhir bulan sebelumnya + 10m³** (Estimasi Pemakaian Default).</p>
+                    <p style="margin: 5px 0 0 0; color: var(--danger-color); font-weight: bold;">* Harap periksa kembali tagihan yang sudah dibuat!</p>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;">Proses Tagihan Massal</button>
+            </form>
+        </div>
+    </div>
+    <!-- END NEW: MODAL TAGIHAN MASSAL -->
 
     <div id="modal-kas" class="modal">
         <div class="modal-content">
@@ -1310,6 +1298,8 @@
             } else {
                 btn.innerHTML = btn.dataset.originalText || originalText;
                 btn.disabled = false;
+                // Pastikan spinner dihilangkan saat reset state
+                if(btn.dataset.originalText) delete btn.dataset.originalText;
             }
         };
 
@@ -1387,9 +1377,11 @@
                 modalGolongan: document.getElementById('modal-golongan'), modalPelanggan: document.getElementById('modal-pelanggan'), modalTagihan: document.getElementById('modal-tagihan'), 
                 modalPembayaran: document.getElementById('modal-pembayaran'), modalKas: document.getElementById('modal-kas'), modalUser: document.getElementById('modal-user'), 
                 modalBuktiFoto: document.getElementById('modal-bukti-foto'), // NEW MODAL
+                modalTagihanMassal: document.getElementById('modal-tagihan-massal'), // <--- NEW MODAL ELEMENT
                 formGolongan: document.getElementById('form-golongan'), formPelanggan: document.getElementById('form-pelanggan'), formTagihan: document.getElementById('form-tagihan'),
                 formAdministrasi: document.getElementById('form-administrasi'), formPembayaran: document.getElementById('form-pembayaran'), formKas: document.getElementById('form-kas'), 
                 formUser: document.getElementById('form-user'), 
+                formTagihanMassal: document.getElementById('form-tagihan-massal'), // <--- NEW FORM
                 tabelGolonganBody: document.getElementById('tabel-golongan-body'), tabelPelangganBody: document.getElementById('tabel-pelanggan-body'), tabelTagihanBody: document.getElementById('tabel-tagihan-body'), 
                 tabelUserBody: document.getElementById('tabel-user-body'), 
                 selectGolonganPelanggan: document.getElementById('select-golongan-pelanggan'), selectPelangganTagihan: document.getElementById('select-pelanggan-tagihan'), 
@@ -1428,13 +1420,6 @@
                 // New Administrasi Input (Suggestion 4)
                 maxUsageMultiplierInput: document.getElementById('max-usage-multiplier'),
 
-                // NEW Rekening Bank Elements
-                inputNamaBank: document.getElementById('input-nama-bank'),
-                inputNomorRekening: document.getElementById('input-nomor-rekening'),
-                inputNamaPemilikRekening: document.getElementById('input-nama-pemilik-rekening'),
-                formRekeningBank: document.getElementById('form-rekening-bank'),
-                rekeningDisplay: document.getElementById('rekening-display'),
-                
                 // NEW Logo Elements
                 inputLogoAplikasi: document.getElementById('input-logo-aplikasi'),
                 previewLogo: document.getElementById('preview-logo'),
@@ -1487,7 +1472,16 @@
             showToast(message) { this.elements.toast.textContent = message; this.elements.toast.className = 'show'; setTimeout(() => { this.elements.toast.className = ''; }, 3000); },
             openModal(modalElement) { modalElement.style.display = 'flex'; },
             closeModal(modalElement) { modalElement.style.display = 'none'; },
-            closeAllModals() { this.closeModal(this.elements.modalGolongan); this.closeModal(this.elements.modalPelanggan); this.closeModal(this.elements.modalTagihan); this.closeModal(this.elements.modalPembayaran); this.closeModal(this.elements.modalKas); this.closeModal(this.elements.modalUser); this.closeModal(document.getElementById('modal-bukti-foto')); }, // Tutup modal foto
+            closeAllModals() { 
+                this.closeModal(this.elements.modalGolongan); 
+                this.closeModal(this.elements.modalPelanggan); 
+                this.closeModal(this.elements.modalTagihan); 
+                this.closeModal(this.elements.modalPembayaran); 
+                this.closeModal(this.elements.modalKas); 
+                this.closeModal(this.elements.modalUser); 
+                this.closeModal(this.elements.modalTagihanMassal); // <--- NEW
+                this.closeModal(document.getElementById('modal-bukti-foto')); 
+            }, // Tutup modal foto
             setupModalGolongan(golongan = null) {
                 const form = this.elements.formGolongan; form.reset(); const title = this.elements.modalGolongan.querySelector('#modal-golongan-title');
                 const idInput = form.querySelector('#id_golongan');
@@ -1647,6 +1641,15 @@
                 }
                 this.openModal(this.elements.modalUser);
             },
+            
+            // NEW: Setup Modal Tagihan Massal
+            setupModalMassTagihan() {
+                const form = this.elements.formTagihanMassal;
+                form.reset();
+                form.querySelector('#periode_massal').value = Utils.getCurrentPeriode();
+                this.openModal(this.elements.modalTagihanMassal);
+            },
+            
             populateGolonganSelect(g) { this.elements.selectGolonganPelanggan.innerHTML = '<option value="">-- Pilih Golongan --</option>' + g.map(i => `<option value="${i.id}">${i.nama} (${Utils.formatCurrency(i.tarif)})</option>`).join(''); },
             populatePelangganSelect(p) { this.elements.selectPelangganTagihan.innerHTML = '<option value="">-- Pilih Pelanggan --</option>' + p.map(i => `<option value="${i.id}">${i.id} - ${i.nama}</option>`).join(''); }
         };
@@ -1663,13 +1666,7 @@
                         denda: 10000, 
                         max_usage_multiplier: 1.5 
                     },
-                    logoBase64: null, // NEW: Simpan Base64 Logo di sini
-                    // NEW: Tambahkan Rekening Bank
-                    rekeningBank: {
-                        namaBank: 'Bank Rakyat Indonesia',
-                        nomorRekening: '1234567890',
-                        namaPemilikRekening: 'GUSI SEJAHTERA'
-                    }
+                    logoBase64: null // NEW: Simpan Base64 Logo di sini
                 }, 
                 golongan: [ { id: 'R1', nama: 'Rumah Tangga 1', tarif: 2500 }, { id: 'R2', nama: 'Rumah Tangga 2', tarif: 3500 }, { id: 'NIAGA', nama: 'Niaga', tarif: 5000 }, ], 
                 pelanggan: [
@@ -1691,9 +1688,8 @@
                 const d = localStorage.getItem('appData'); 
                 const defaultData = this.getDefaultData();
                 if (d) { 
-                    let loadedData;
                     try {
-                        loadedData = JSON.parse(d); 
+                        this.data = JSON.parse(d); 
                     } catch(e) {
                         console.error("Error parsing localStorage data:", e);
                         UI.showToast('Data corrupt! Memuat data default baru. Silakan lakukan Import jika punya backup.');
@@ -1703,7 +1699,6 @@
                         this.save();
                         return;
                     }
-                    this.data = loadedData;
                     
                     // --- START MIGRASI DATA LAMA ---
                     // Pastikan semua properti ada, jika tidak, gunakan nilai default.
@@ -1725,11 +1720,6 @@
                          this.data.pengaturanAplikasi.logoBase64 = defaultData.pengaturanAplikasi.logoBase64;
                     }
                     
-                    // NEW: Tambahkan properti rekening bank jika belum ada
-                    if (this.data.pengaturanAplikasi.rekeningBank === undefined) {
-                         this.data.pengaturanAplikasi.rekeningBank = defaultData.pengaturanAplikasi.rekeningBank;
-                    }
-                    
                     // Perbaiki status tagihan lama yang mungkin tidak memiliki status 'Menunggu Validasi'
                     this.data.tagihan = this.data.tagihan.map(t => {
                         if (t.sumber === 'mandiri' && t.status === 'Belum Lunas' && !t.tgl_validasi) {
@@ -1747,9 +1737,7 @@
                 } else { 
                     this.data = defaultData; 
                     // Jika tidak ada data di localStorage, berarti ini adalah fresh start (atau data dihapus oleh browser)
-                                // Simpan hanya saat pertama kali membuat data baru
-                this.save();
-} 
+                } 
                 this.save(); 
                 
                 // NEW DIAGNOSTIC ALERT
@@ -1939,10 +1927,7 @@
                 const periods = Utils.get12MonthsAgo();
                 const labels = periods.map(Utils.formatMonthYear);
                 const data = periods.map(p => {
-                    const kasEntries = State.data.kas.filter(k => k.tipe === 'MASUK' && k.tanggal.startsWith(p));
-                    // Pastikan kasEntries adalah array yang valid sebelum reduce
-                    if (!Array.isArray(kasEntries)) return 0;
-                    return kasEntries.reduce((sum, k) => sum + k.jumlah, 0);
+                    return State.data.kas.filter(k => k.tipe === 'MASUK' && k.tanggal.startsWith(p)).reduce((sum, k) => sum + k.jumlah, 0);
                 });
 
                 if (this.chartInstances.pemasukan) this.chartInstances.pemasukan.destroy();
@@ -2134,7 +2119,7 @@
                     if (item.status === 'Lunas') statusClass = 'status-lunas';
                     else if (item.status === 'Menunggu Validasi') statusClass = 'status-pending';
                     
-                    const sumberText = item.sumber === 'mandiri' ? 'Mandiri' : 'Staf';
+                    const sumberText = item.sumber === 'mandiri' ? 'Mandiri' : (item.sumber === 'massal' ? 'Massal' : 'Staf'); // Ditambahkan: Massal
                     return `<tr><td>${pl.id}</td><td>${pl.nama}</td><td>${Utils.formatPeriode(item.periode)}</td><td>${item.pemakaian}</td><td>${sumberText}</td><td>${Utils.formatCurrency(item.total_tagihan)}</td><td class="${statusClass}">${item.status}</td><td class="action-buttons">${aB}</td></tr>`;
                 }).join('');
             },
@@ -2177,18 +2162,13 @@
                 });
                 document.getElementById('btn-reset-bayar').addEventListener('click', Handlers.resetInputBayar); 
             },
-            // UPDATED: Include max_usage_multiplier (Suggestion 4) dan rekeningBank
+            // UPDATED: Include max_usage_multiplier (Suggestion 4)
             administrasi() { 
-                const { biaya, rekeningBank } = State.data.pengaturanAplikasi; // Ambil juga rekeningBank
+                const { biaya } = State.data.pengaturanAplikasi; 
                 document.getElementById('biaya-pemeliharaan').value = biaya.pemeliharaan; 
                 document.getElementById('biaya-administrasi').value = biaya.administrasi; 
                 document.getElementById('biaya-denda').value = biaya.denda; 
-                document.getElementById('max-usage-multiplier').value = biaya.max_usage_multiplier; 
-                
-                // NEW: Load Rekening Bank
-                UI.elements.inputNamaBank.value = rekeningBank.namaBank;
-                UI.elements.inputNomorRekening.value = rekeningBank.nomorRekening;
-                UI.elements.inputNamaPemilikRekening.value = rekeningBank.namaPemilikRekening;
+                document.getElementById('max-usage-multiplier').value = biaya.max_usage_multiplier; // NEW
                 
                 // Load Logo Preview
                 const logo = State.data.pengaturanAplikasi.logoBase64;
@@ -2394,40 +2374,8 @@
                     return `<tr><td>${u.username}</td><td>${u.namaLengkap}</td><td>${roleText}</td><td class="action-buttons">${actionButtons}</td></tr>`;
                 }).join('');
             },
-
-            // NEW: Render Rekening Pembayaran
-            rekeningPembayaran() {
-                const { namaBank, nomorRekening, namaPemilikRekening } = State.data.pengaturanAplikasi.rekeningBank;
-                
-                let html = '';
-                if (nomorRekening && namaPemilikRekening) {
-                    html = `
-                        <h3 style="color: var(--primary-dark); margin-top: 0;">${namaBank}</h3>
-                        <div style="font-size: 1.5em; margin-bottom: 10px; font-weight: bold; padding: 10px; background-color: white; border: 1px solid #ddd; border-radius: 4px; display:flex; align-items:center; justify-content:space-between;">
-                            <span>${nomorRekening}</span>
-                            <i class="fa-regular fa-copy" style="cursor: pointer; margin-left: 10px; font-size: 0.7em;" title="Salin Nomor Rekening"></i>
-                        </div>
-                        <p style="font-size: 1.2em;">A.N. <strong style="color: var(--success-color);">${namaPemilikRekening}</strong></p>
-                    `;
-                } else {
-                    html = '<p class="status-belum">Mohon maaf, informasi rekening pembayaran belum dikonfigurasi oleh Admin.</p>';
-                }
-                
-                UI.elements.rekeningDisplay.innerHTML = html;
-                
-                // Tambahkan event listener untuk tombol salin (Copy to Clipboard)
-                const copyBtn = UI.elements.rekeningDisplay.querySelector('.fa-copy');
-                if (copyBtn) {
-                     copyBtn.addEventListener('click', () => {
-                        // Menggunakan API modern untuk menyalin
-                        navigator.clipboard.writeText(nomorRekening)
-                            .then(() => UI.showToast('Nomor rekening berhasil disalin!'))
-                            .catch(() => UI.showToast('Gagal menyalin. Silakan salin manual.'));
-                     });
-                }
-            },
         };
-
+        
         const Handlers = {
             // NEW UTILITY: Hasilkan tombol aksi untuk tabel tagihan (Refactoring #1)
             generateTagihanActionButtons(tagihan, isPetugas, isFullAdmin) {
@@ -2508,11 +2456,14 @@
                 
                 // Jika bukan Full Admin atau Petugas, sembunyikan tombol buat tagihan
                 const btnBuatTagihan = document.getElementById('btn-buat-tagihan');
+                const btnBuatTagihanMassal = document.getElementById('btn-buat-tagihan-massal'); // <--- NEW ELEMENT
                 if (btnBuatTagihan) {
                     if (role !== 'full' && role !== 'petugas') {
                          btnBuatTagihan.style.display = 'none';
+                         if(btnBuatTagihanMassal) btnBuatTagihanMassal.style.display = 'none'; // <--- NEW ELEMENT
                     } else {
                         btnBuatTagihan.style.display = 'inline-flex';
+                        if(btnBuatTagihanMassal) btnBuatTagihanMassal.style.display = 'inline-flex'; // <--- NEW ELEMENT
                     }
                 }
             },
@@ -2710,6 +2661,7 @@
                 // Mode Edit/Lihat Tagihan Menunggu Validasi 
                 else if (existing && existing.status === 'Menunggu Validasi') {
                     UI.closeAllModals(); 
+                    setButtonState(btn, false, 'Simpan Tagihan'); // Reset button di mode "Lihat"
                     return;
                 }
                 // Mode Tambah Baru/Edit Tagihan Belum Lunas
@@ -3011,8 +2963,6 @@
                 document.getElementById(t).classList.add('active');
                 if (t === 'riwayat-tagihan-pelanggan') Handlers.renderRiwayatTagihanPelanggan();
                 else if (t === 'input-meter-mandiri') Handlers.renderCustomerPortal();
-                // NEW: Handle Rekening Pembayaran
-                else if (t === 'rekening-pembayaran') Render.rekeningPembayaran();
             },
             
             // UPDATED: Enhanced Visual Feedback (Suggestion 6)
@@ -3047,7 +2997,7 @@
                          const btnViewFoto = document.querySelector('#meter-input-status button[data-action="view-foto"]');
                          if(btnViewFoto) btnViewFoto.addEventListener('click', (e) => Handlers.tagihanAction.call(Handlers, { target: e.target }));
                     } else {
-                         UI.elements.meterInputStatus.innerHTML = `<p class="status-lunas">Tagihan bulan ${Utils.formatPeriode(currentPeriode)} sudah terbentuk (${tagihanBulanIni.sumber === 'mandiri' ? 'Mandiri' : 'Staf'}). Total Tagihan: **${Utils.formatCurrency(tagihanBulanIni.total_tagihan)}**. Status: **${tagihanBulanIni.status}**.</p>`;
+                         UI.elements.meterInputStatus.innerHTML = `<p class="status-lunas">Tagihan bulan ${Utils.formatPeriode(currentPeriode)} sudah terbentuk (${tagihanBulanIni.sumber === 'mandiri' ? 'Mandiri' : (tagihanBulanIni.sumber === 'massal' ? 'Massal' : 'Staf')}). Total Tagihan: **${Utils.formatCurrency(tagihanBulanIni.total_tagihan)}**. Status: **${tagihanBulanIni.status}**.</p>`;
                     }
                 } 
                 else {
@@ -3273,26 +3223,6 @@
                 }
             },
             
-            // NEW HANDLER: Simpan Rekening Bank
-            saveRekeningBank: (e) => {
-                e.preventDefault();
-                // Role check: Full Admin
-                if (Auth.currentUser?.role !== 'full') return UI.showToast('Akses ditolak. Hanya Admin Penuh yang dapat mengelola pengaturan.');
-                
-                const nB = UI.elements.inputNamaBank.value.trim();
-                const nR = UI.elements.inputNomorRekening.value.trim();
-                const nP = UI.elements.inputNamaPemilikRekening.value.trim();
-                
-                if (!nB || !nR || !nP) return UI.showToast('Semua kolom Rekening Bank wajib diisi.');
-                
-                const newRekening = { namaBank: nB, nomorRekening: nR, namaPemilikRekening: nP };
-                const uS = { ...State.data.pengaturanAplikasi, rekeningBank: newRekening };
-                State.update({ pengaturanAplikasi: uS });
-                
-                UI.showToast('Rekening Pembayaran berhasil disimpan.');
-                Render.administrasi();
-            },
-            
             // --- INJECTED ADMIN HANDLERS (Adjusted) ---
             saveGolongan: (e) => { e.preventDefault(); const btn = e.target.querySelector('button[type="submit"]'); setButtonState(btn, true, 'Simpan'); const f = UI.elements.formGolongan, i = f.querySelector('#id_golongan'); const id = i.value.trim().toUpperCase(), n = f.querySelector('#nama_golongan').value.trim(), t = parseInt(f.querySelector('#tarif_golongan').value); if (!id || !n || isNaN(t) || t < 0) { setButtonState(btn, false, 'Simpan'); return UI.showToast('Semua kolom valid wajib diisi!');} if (!i.readOnly) { if (State.data.golongan.some(g => g.id === id)) { setButtonState(btn, false, 'Simpan'); return UI.showToast('ID Golongan sudah ada!');} State.addGolongan({ id, nama: n, tarif: t }); UI.showToast('Golongan ditambahkan!'); } else { State.updateGolongan({ id, nama: n, tarif: t }); UI.showToast('Golongan diperbarui!'); } UI.closeAllModals(); Render.golongan(); Render.pelanggan(); Render.tagihan(); setButtonState(btn, false, 'Simpan'); }, 
             // UPDATED: Include max_usage_multiplier (Suggestion 4)
@@ -3363,13 +3293,18 @@
                 setButtonState(btn, true, 'Konfirmasi Bayar');
                 
                 // Role check: Petugas / Full Admin
-                if (Auth.currentUser?.role !== 'full' && Auth.currentUser?.role !== 'petugas') { setButtonState(btn, false, 'Konfirmasi Bayar'); return UI.showToast('Akses ditolak. Hanya Admin dan Petugas yang dapat melakukan pembayaran.'); }
-
+                if (Auth.currentUser?.role !== 'full' && Auth.currentUser?.role !== 'petugas') { 
+                    setButtonState(btn, false, 'Konfirmasi Bayar'); // <--- PENTING: RESET STATE
+                    return UI.showToast('Akses ditolak. Hanya Admin dan Petugas yang dapat melakukan pembayaran.'); 
+                }
 
                 const tagihanId = document.getElementById('bayar-tagihan-id').value; 
                 const tagihan = State.data.tagihan.find(t => t.id === tagihanId);
                 
-                if (tagihan.status === 'Menunggu Validasi') { setButtonState(btn, false, 'Konfirmasi Bayar'); return UI.showToast('Gagal: Tagihan Mandiri harus divalidasi Admin dahulu!'); }
+                if (tagihan.status === 'Menunggu Validasi') { 
+                    setButtonState(btn, false, 'Konfirmasi Bayar'); // <--- PENTING: RESET STATE
+                    return UI.showToast('Gagal: Tagihan Mandiri harus divalidasi Admin dahulu!'); 
+                }
 
                 const [y, m] = tagihan.periode.split('-'); 
                 const tglJatuhTempo = new Date(parseInt(y), parseInt(m), 1); 
@@ -3398,6 +3333,8 @@
                 Render.tagihan(); 
                 Render.kasUmum(); 
                 if(UI.elements.bayarSearchPelanggan.value.trim() !== '') Handlers.findBillsForPayment(); 
+                
+                setButtonState(btn, false, 'Konfirmasi Bayar'); // <--- PENTING: RESET STATE SETELAH BERHASIL
             },
             hitungKembalian: () => {
                 const totalTagihan = parseFloat(document.getElementById('bayar-total-tagihan').dataset.total);
@@ -3416,6 +3353,89 @@
                 Render.inputBayarResults(c,bills); 
             },
             resetInputBayar: () => { UI.elements.bayarSearchPelanggan.value=''; const r=UI.elements.bayarHasilPencarian; r.style.display='none'; r.innerHTML=''; },
+            
+            // NEW HANDLER: Tagihan Massal
+            createMassTagihan: (e) => {
+                e.preventDefault();
+                const btn = e.target.querySelector('button[type="submit"]');
+                setButtonState(btn, true, 'Proses Tagihan Massal');
+                
+                // Role check: Full Admin / Petugas
+                if (Auth.currentUser?.role !== 'full' && Auth.currentUser?.role !== 'petugas') { 
+                    setButtonState(btn, false, 'Proses Tagihan Massal');
+                    return UI.showToast('Akses ditolak. Hanya Admin dan Petugas yang dapat membuat Tagihan Massal.'); 
+                }
+
+                const periodeMassal = document.getElementById('periode_massal').value;
+                if (!periodeMassal) {
+                    setButtonState(btn, false, 'Proses Tagihan Massal');
+                    return UI.showToast('Pilih periode tagihan.');
+                }
+                
+                const customers = State.data.pelanggan;
+                const newTagihanList = [];
+                let createdCount = 0;
+                
+                // Gunakan 10m³ sebagai pemakaian default/estimasi
+                const DEFAULT_USAGE = 10; 
+                const { biaya } = State.data.pengaturanAplikasi;
+
+                customers.forEach(p => {
+                    // 1. Cek apakah tagihan untuk periode ini sudah ada
+                    const existingTagihan = State.data.tagihan.find(t => t.pelanggan_id === p.id && t.periode === periodeMassal);
+                    if (existingTagihan) {
+                        return; // Lewati jika sudah ada
+                    }
+                    
+                    // 2. Dapatkan meter akhir bulan sebelumnya
+                    const lastTagihan = State.getLatestTagihan(p.id);
+                    const meterAwal = lastTagihan ? lastTagihan.meter_akhir : 0;
+                    const meterAkhir = meterAwal + DEFAULT_USAGE;
+                    
+                    // 3. Hitung biaya
+                    const g = State.data.golongan.find(gl => gl.id === p.golonganId); 
+                    if (!g) {
+                        console.error(`Golongan ${p.golonganId} tidak ditemukan untuk pelanggan ${p.id}.`);
+                        return; // Lewati pelanggan tanpa golongan
+                    }
+
+                    const pemakaian = meterAkhir - meterAwal;
+                    const biayaAir = pemakaian * g.tarif; 
+                    const total = Utils.calculateTagihanTotal(biayaAir, biaya.pemeliharaan, biaya.administrasi, 0);
+
+                    // 4. Buat objek tagihan baru
+                    const tData = { 
+                        id: Utils.generateId('tag'), 
+                        pelanggan_id: p.id, 
+                        periode: periodeMassal, 
+                        meter_awal: meterAwal, 
+                        meter_akhir: meterAkhir, 
+                        pemakaian: pemakaian, 
+                        biaya_air: biayaAir, 
+                        biaya_pemeliharaan: biaya.pemeliharaan, 
+                        biaya_admin: biaya.administrasi, 
+                        denda: 0, 
+                        total_tagihan: total, 
+                        status: 'Belum Lunas', 
+                        sumber: 'massal' // Sumber baru
+                    };
+                    
+                    newTagihanList.push(tData);
+                    createdCount++;
+                });
+                
+                // 5. Update State
+                if (newTagihanList.length > 0) {
+                    State.data.tagihan = [...State.data.tagihan, ...newTagihanList];
+                    State.save(); // Simpan perubahan ke localStorage
+                }
+
+                UI.showToast(`${createdCount} Tagihan Massal berhasil dibuat untuk periode ${Utils.formatPeriode(periodeMassal)}.`);
+                UI.closeAllModals();
+                Render.tagihan();
+                
+                setButtonState(btn, false, 'Proses Tagihan Massal');
+            },
             
             
             // PERBAIKAN FUNGSI PRINT: Menggunakan window.print() langsung pada elemen yang di-set khusus
@@ -3442,15 +3462,12 @@
                 }, 100); 
             },
             
-            // MODIFIKASI: MENAMPILKAN NO REK DI BUKTI PEMBAYARAN
+            // PERBAIKAN FUNGSI STRUK CETAK SESUAI PERMINTAAN USER
             handlePrintReceipt: (id) => {
                 const t = State.data.tagihan.find(tg => tg.id === id); if (!t) return UI.showToast('Tagihan tidak ditemukan.');
                 const p = State.data.pelanggan.find(pl => pl.id === t.pelanggan_id); 
                 const g = State.data.golongan.find(gl => gl.id === p.golonganId); 
                 if (!p || !g) return UI.showToast('Data pelanggan/golongan tidak lengkap.');
-                
-                // NEW: Ambil data Rekening Bank
-                const rekening = State.data.pengaturanAplikasi.rekeningBank || {};
                 
                 // Tentukan alamat kantor (dihilangkan dari output cetak)
                 const kantorAddress = ""; 
@@ -3458,15 +3475,7 @@
                 // NEW: Ambil Logo Base64
                 const logo = State.data.pengaturanAplikasi.logoBase64;
                 const logoHtml = logo ? `<img src="${logo}" alt="Logo Aplikasi" style="max-width: 50px; max-height: 50px; margin-right: 10px;">` : '';
-                
-                // NEW: Konten Rekening Bank
-                const rekeningHtml = rekening.nomorRekening ? `
-                    <div style="margin-top: 15px; padding: 5px 0; border-top: 1px dashed #000; border-bottom: 1px dashed #000; text-align: center; font-size: 10pt;">
-                        <p style="margin: 0; font-weight: bold;">Pembayaran Transfer ke Rekening:</p>
-                        <p style="margin: 3px 0; font-size: 12pt; font-weight: bold;">${rekening.namaBank} - ${rekening.nomorRekening}</p>
-                        <p style="margin: 0;">A.N. ${rekening.namaPemilikRekening}</p>
-                    </div>
-                ` : '';
+
 
                 const receiptHtml = `
                     <div class="receipt-print-container">
@@ -3476,19 +3485,19 @@
                                 ${logoHtml} <!-- LOGO DITEMPATKAN DI SINI -->
                                 <div style="font-size:14px;font-weight:bold;">${State.data.pengaturanAplikasi.judulAplikasi.toUpperCase()}</div>
                             </div>
-                            <div style="font-size:16px;font-weight:bold; color: #000; text-align: right;">BUKTI PEMBAYARAN AIR</div>
+                            <div style="font-size:16px;font-weight:bold; color: #000; text-align: right;">INFORMASI TAGIHAN AIR</div>
                         </div>
 
                         <!-- KEPADA YTH DAN DETAIL TAGIHAN (Dibuat Grid 2 Kolom) -->
                         <div class="detail-info-grid" style="margin-bottom: 10px;">
-                            <div style="width: 50%;">
-                                <div style="font-weight: bold; margin-bottom: 5px; font-size: 10pt;">Kepada Yth:</div>
+                            <div style="font-size: 10pt;">
+                                <div style="font-weight: bold; margin-bottom: 5px;">Kepada Yth:</div>
                                 <!-- NAMA PELANGGAN TERISI DI SINI -->
                                 <div style="font-size: 11pt; font-weight: bold; margin-bottom: 5px;">${p.nama.toUpperCase()}</div>
                                 <!-- Baris alamat kantor dihilangkan sepenuhnya -->
-                                <div style="font-size: 10pt;">${p.alamat}</div>
+                                <div>${p.alamat}</div>
                             </div>
-                            <div style="width: 50%; font-size: 10pt;">
+                            <div style="font-size: 10pt;">
                                 <!-- MODIFIKASI 2: Buat alignment sejajar (:) untuk detail atas -->
                                 <div class="detail-row" style="display: block;">
                                     <span style="display: inline-block; width: 120px;">ID Pelanggan</span>: <span>${p.id}</span>
@@ -3566,9 +3575,6 @@
                             </div>
                         </div>
                         
-                        <!-- NEW: TAMPILKAN REKENING BANK JIKA ADA -->
-                        ${rekeningHtml}
-
                         <!-- CATATAN KAKI -->
                         <div style="margin-top:15px; font-size:10pt; text-align:center;">
                             <p style="margin: 0;">LUNAS. Terima Kasih atas pembayaran Anda.</p>
@@ -3621,23 +3627,20 @@
                 const r = new FileReader(); 
                 
                 r.onload = (ev) => {
-                    let importedData;
                     try {
-                        importedData = JSON.parse(ev.target.result);
+                        const iD = JSON.parse(ev.target.result);
+                        // Cek keberadaan properti utama
+                        if (iD.pelanggan && iD.tagihan && iD.golongan && iD.pengaturanAplikasi) {
+                            if (confirm('Ini akan menimpa semua data. Lanjutkan?')) {
+                                // PERBAIKAN: Perlu memanggil State.update dengan data yang diimpor
+                                State.update(iD);
+                                UI.showToast('Data diimpor!');
+                            }
+                        } else {
+                            UI.showToast('Format file tidak valid. File JSON tidak mengandung struktur data aplikasi.');
+                        }
                     } catch (err) {
                         UI.showToast('Gagal membaca file (bukan format JSON yang valid).');
-                        return;
-                    }
-                    
-                    // Cek keberadaan properti utama
-                    if (importedData.pelanggan && importedData.tagihan && importedData.golongan && importedData.pengaturanAplikasi) {
-                        if (confirm('Ini akan menimpa semua data. Lanjutkan?')) {
-                            // PERBAIKAN: Perlu memanggil State.update dengan data yang diimpor
-                            State.update(importedData);
-                            UI.showToast('Data diimpor!');
-                        }
-                    } else {
-                        UI.showToast('Format file tidak valid. File JSON tidak mengandung struktur data aplikasi.');
                     }
                 }; 
                 
@@ -3697,6 +3700,11 @@
                 document.getElementById('btn-tambah-golongan').addEventListener('click', () => UI.setupModalGolongan());
                 document.getElementById('btn-tambah-pelanggan').addEventListener('click', () => UI.setupModalPelanggan(State.data.golongan));
                 document.getElementById('btn-buat-tagihan').addEventListener('click', () => UI.setupModalTagihan(State.data.pelanggan));
+                
+                // NEW: Tombol Tagihan Massal
+                document.getElementById('btn-buat-tagihan-massal').addEventListener('click', () => UI.setupModalMassTagihan());
+                el.formTagihanMassal.addEventListener('submit', Handlers.createMassTagihan);
+                
                 el.tabelGolonganBody.addEventListener('click', Handlers.golonganAction); 
                 el.tabelPelangganBody.addEventListener('click', Handlers.pelangganAction); 
                 // FIX: Add call(Handlers, e) to ensure 'this' context is correct inside Handlers methods if needed
@@ -3751,10 +3759,6 @@
                 el.formGolongan.addEventListener('submit', Handlers.saveGolongan);
                 el.formAdministrasi.addEventListener('submit', Handlers.saveAdministrasi);
                 el.btnSimpanJudul.addEventListener('click', Handlers.saveJudulAplikasi);
-                
-                // NEW: Binding Event Simpan Rekening Bank
-                el.formRekeningBank.addEventListener('submit', Handlers.saveRekeningBank);
-                
                 // FIX: Use tagihanAction for buttons inside bayarHasilPencarian
                 el.bayarHasilPencarian.addEventListener('click', (e) => {
                     const btn = e.target.closest('button');
